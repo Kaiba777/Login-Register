@@ -24,7 +24,6 @@ header {
 }
 
 header .container {
-    border: 1px solid red;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,13 +39,34 @@ header .container {
 .container ul {
     display: flex;
     align-items: center;
-    border: 1px solid red;
 }
 
 ul li {
     margin-right: 30px;
     list-style: none;
+    position: relative;
 }
+
+/* Animation sur la navbar */
+ul li::after {
+    content: "";
+    position: absolute;
+    background: white;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: -3px;
+    transform: scaleX(0);
+    transition: transform .5s;
+    transform-origin: right;
+}
+
+ul li:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
 
 li a {
     text-decoration: none;
@@ -59,10 +79,15 @@ ul button {
     color: white;
     border: 1px solid white;
     border-radius: 5px;
-    padding: 15px;
+    padding: 13px;
     font-weight: 900;
-    font-family: 'Poppins', sans-serif;
     width: 100px;
     cursor: pointer;
+    font-size: 1rem;
+    transition: 0.5s;
+}
 
+ul button:hover {
+    background: white;
+    color: #162938;
 }
