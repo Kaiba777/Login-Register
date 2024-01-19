@@ -7,10 +7,8 @@
 /*************************** Global ***************************/
 
 body {
-    display: flex;
-    justify-content: center;
     min-height: 100vh;
-    background: url(../img/background.jpg) center/cover fixed;
+    background: url(../img/background.jpg) center/cover;
 }
 
 /*************************** Header ***************************/
@@ -90,4 +88,43 @@ ul button {
 ul button:hover {
     background: white;
     color: #162938;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    margin: 0 auto;
+    width: 400px;
+    position: relative;
+}
+
+section .container-login {
+    border: 1px solid red;
+    padding: 0 20px 20px 20px;
+    width: 100%;
+}
+
+.container-login h1{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.container-login form {
+    border: 1px solid red;   
+}
+
+form .email, form .password {
+    border: 1px solid red;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.email input[type="email"], .password input[type="password"] {
+    width: 100%;
 }
