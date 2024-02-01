@@ -70,7 +70,7 @@ li a {
     font-weight: 800;
 }
 
-ul button {
+ul .btn-login {
     background: transparent;
     color: white;
     border: 1px solid white;
@@ -83,12 +83,12 @@ ul button {
     transition: 0.5s;
 }
 
-ul button:hover {
+ul .btn-login:hover {
     background: white;
     color: #162938;
 }
 
-section {
+.main {
     display: flex;
     justify-content: center;
     border: 2px solid rgba(255, 255, 255, .5);
@@ -98,27 +98,45 @@ section {
     margin: 0 auto;
     width: 400px;
     height: 440px;
+    overflow: hidden;
+    transform: scale(0);
     position: relative;
+    transition: transform .5s ease;
 }
 
-section .x {
+.main.active-btn {
+    transform: scale(1);
+}
+
+.main .x {
     position: absolute;
+    height: 50px;
+    width: 50px;
     right: 0;
-    padding: 10px;
     border: 1px solid #162938;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #162938;
     color: white;
     font-weight: 800;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     cursor: pointer;
+    z-index: 1;
 }
 
-section .container-login {
+.main .container-login {
     padding: 0 20px 20px 20px;
     width: 90%;
-    /* display: none; */
+    transition: transform .18s ease;
+    transform: translate(0);
+}
+
+.main.active .container-login {
+    transition: none;
+    transform: translateX(-400px);
 }
 
 .container-login h1 {
@@ -127,6 +145,7 @@ section .container-login {
     margin-top: 50px;
     font-size: 1.8rem;
     font-weight: 800;
+    pointer-events: none;
 }
 
 form .input-box {
@@ -212,21 +231,27 @@ form .remember {
     color: #162938;
 }
 
-.account-register a {
+.account-register .register-link {
     text-decoration: none;
     color: #162938;
 }
 
-.account-register a:hover {
+.account-register .register-link:hover {
     text-decoration: underline;
 }
 
 /*************************** Register ***************************/
 
-section .container-register {
+.main .container-register {
     width: 80%;
     position: absolute;
+    transition: none;
     transform: translateX(400px);
+}
+
+.main.active .container-register {
+    transition: transform .18s ease;
+    transform: translateX(0);
 }
 
 .container-register h1{
@@ -259,11 +284,11 @@ section .container-register {
     margin-top: 20px;
 }
 
-.account-login a {
+.account-login .login-link {
     text-decoration: none;
     color: #162938;
 }
 
-.account-login a:hover {
+.account-login .login-link:hover {
     text-decoration: underline;
 }
