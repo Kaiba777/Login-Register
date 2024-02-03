@@ -29,6 +29,53 @@ header .container {
     background: transparent;
 }
 
+/************************ Dropdown ************************/
+
+.dropdown {
+    position: relative;
+    display: none;
+    z-index: 1;
+}
+
+.dropdown .list {
+    display: flex;
+    font-size: 2rem;
+    color: white;
+    line-height: 90px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    border: 2px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(20px);
+}
+
+.dropdown-content .nav-responsive {
+    width: 100%;
+}
+
+.nav-responsive a {
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+}
+
+.dropdown-content .nav-responsive:hover {
+    background: #162938;
+}
+
+.nav-responsive a {
+    display: flex;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 .container h1 {
     color: white;
     font-weight: 900;
@@ -291,4 +338,65 @@ form .remember {
 
 .account-login .login-link:hover {
     text-decoration: underline;
+}
+
+/*********************** Responsive ***********************/
+
+@media screen and (max-width:897px){
+    .container ul {
+        display: none;
+    }
+
+    .dropdown {
+        display: inline-block;
+    }
+
+    .main {
+        transform: scale(1);
+    }
+
+    .main .x {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:501px) {
+    .main {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:441px) {
+    .remember a {
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width:431px) {
+    .remember {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width:365px) {
+    .main {
+        width: 300px;
+    }
+
+    .container-register .account-login {
+        margin-top: 10px;
+    }
+
+    .container-login .account-register {
+        margin: 20px 0;
+    }
+
+    .account-register p {
+        font-size: 0.95rem;
+    }
+
+    .remember a {
+        margin-left: 20px;
+    }
 }
